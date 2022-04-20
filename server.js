@@ -11,6 +11,8 @@ app.use("/APITest", require("./routes/APITest"))
 app.use("/apireq", require("./routes/apireq"))
 app.use("/game", require("./routes/game"))
 
+app()
+
 app.listen(port, () =>
     console.log(`App listening at http://localhost:${port}`)
 );

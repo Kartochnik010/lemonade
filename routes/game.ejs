@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Your score is <span id="score">0</span></p>
+<!--<form method="post" action="/">-->
+    <button id="btn" style="padding: 16px; border-radius: 50%">TAP</button>
+<!--</form>-->
+<br><br><br><br>
+<a href="/">Back to main page</a>
+
+<script>
+    let btnContent = document.getElementById("score").innerHTML
+    let score = sessionStorage.getItem("score")
+    setTimeout(()=>{
+        if (score != null || score != undefined){
+            btnContent = score
+        } else {
+            sessionStorage.setItem("score",btnContent)
+        }
+    }, 10000)
+    document.getElementById("btn").addEventListener('click',() => {
+        btnContent = parseInt(btnContent) + 1;
+        sessionStorage.setItem(0,btnContent)
+//вроде что то накалякал, но ничего не получилось ;(
+    })
+</script>
+</body>
+</html>
